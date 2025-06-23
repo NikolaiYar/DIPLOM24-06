@@ -1,0 +1,130 @@
+/* Button Base Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    background: var(--primary);
+}
+
+/* Primary Button */
+.btn-primary {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover {
+    background: #2d4a7f;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    background: var(--secondary) !important;
+    color: #fff !important;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Success Button */
+.btn-success {
+    background: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background: #218838;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Danger Button */
+.btn-danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Warning Button */
+.btn-warning {
+    background: #ffc107;
+    color: #212529;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+    color: #212529;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Info Button */
+.btn-info {
+    background: #17a2b8;
+    color: #fff;
+}
+
+.btn-info:hover {
+    background: #138496;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Sizes */
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+}
+
+/* Button States */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Button with Icon */
+.btn i {
+    margin-right: 8px;
+}
+
+/* Full Width Button */
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* Button Focus State */
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 90, 143, 0.25);
+} 

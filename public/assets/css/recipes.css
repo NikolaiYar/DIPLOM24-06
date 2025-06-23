@@ -1,0 +1,511 @@
+/* Recipes Page Header */
+.recipes-header {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    color: black;
+}
+
+.recipes-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.recipes-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.recipes-filters {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 1rem;
+}
+
+.filters-form {
+    width: 100%;
+}
+
+.filters-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-group {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.search-input, .category-select, .btn, .btn-primary, .btn-secondary {
+    height: 42px;
+    font-size: 1rem;
+    line-height: normal;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border-width: 1.5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-block;
+    font-family: inherit;
+    margin: 0;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    appearance: none;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3a5a8f;
+    box-shadow: 0 0 0 2px rgba(58, 90, 143, 0.1);
+}
+
+.category-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.category-select {
+    min-width: 200px;
+    padding: 0 1.25rem;
+    border: 1.5px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none;
+}
+
+.recipe-container {
+    padding: 2rem 0;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 0;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+.recipe-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0.5rem;
+    color: var(--text);
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.recipe-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.recipe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.recipe-card:hover .recipe-img {
+    transform: scale(1.05);
+}
+
+.recipe-info {
+    padding: 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-title {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.recipe-desc {
+    color: var(--text);
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    flex-grow: 1;
+    line-height: 1.5;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    color: var(--text);
+}
+
+.cook-time {
+    color: var(--text);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Pagination Styles */
+.pagination-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.page-item {
+    list-style: none;
+}
+
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: var(--primary);
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.page-link:hover {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    text-decoration: none;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+.page-item.disabled .page-link {
+    color: var(--border);
+    pointer-events: none;
+    background-color: var(--card-bg);
+    border-color: var(--border);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .recipes-header {
+        padding: 1rem;
+    }
+
+    .recipes-header-top {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .filters-row {
+        flex-direction: column;
+    }
+
+    .search-group,
+    .category-group {
+        width: 100%;
+    }
+
+    .search-input,
+    .category-select {
+        width: 100%;
+    }
+
+    .recipe-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+    
+    .page-link {
+        min-width: 35px;
+        height: 35px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+.back-btn {
+    margin-bottom: 1.5rem;
+    margin-left: 1rem;
+}
+
+.category-title {
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.btn, .btn-primary, .btn-secondary {
+    padding: 0 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 1.5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+/* --- Styles moved from mine.blade.php (My Recipes page) --- */
+.my-recipe-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 0;
+    justify-content: center;
+}
+.container.recipe-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+.recipe-grid.mine {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.recipe-card.mine {
+    max-width: 320px;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    box-sizing: border-box;
+}
+.recipe-image.mine {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px 6px 0 0;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recipe-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+.recipe-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+.recipe-title.mine {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #222;
+}
+.recipe-desc.mine {
+    font-size: 0.85rem;
+    margin-bottom: 0.7rem;
+    color: #666;
+}
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+.my-recipe-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    justify-content: center;
+}
+.create-recipe-btn {
+    margin-bottom: 0;
+}
+@media (max-width: 900px) {
+    .recipe-grid.mine {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    .recipe-card.mine {
+        max-width: 100%;
+    }
+    .recipe-image.mine {
+        height: 140px;
+    }
+}
+
+/* --- FIX: Header alignment for My Recipes page --- */
+.recipe-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+.recipe-main-title {
+    margin-bottom: 0;
+}
+.create-recipe-btn {
+    margin-left: auto;
+}
+
+@media (max-width: 900px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- FINAL FIX: Make recipe cards in categories/show.blade.php centered like index.blade.php --- */
+.category-container .recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 1.1rem !important;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+    padding: 0;
+}
+.category-container .recipe-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+.category-container .recipe-card {
+    max-width: 300px;
+}
+@media (max-width: 900px) {
+    .category-container .recipe-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+@media (max-width: 600px) {
+    .category-container .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+:root {
+    --bg: #f7f9fc;
+    --card-bg: #fff;
+    --text: #222;
+    --border: #e0e0e0;
+    --primary: #3a5a8f;
+    --secondary: #6c757d;
+}
+.dark-theme {
+    --bg: #181c24;
+    --card-bg: #232a36;
+    --text: #e6e6e6;
+    --border: #2c3440;
+    --primary: #4a90e2;
+    --secondary: #444b58;
+}
+
+body {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+.recipe-container, .content-card, .profile-card, .category-card, .recipe-card {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+.header, .footer {
+    background: var(--card-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+.btn-primary {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+.btn-secondary {
+    background: var(--secondary) !important;
+    color: #fff !important;
+}
+
+.dark-theme .section-title,
+.dark-theme .recipe-title,
+.dark-theme .recipe-description,
+.dark-theme .ingredients-section,
+.dark-theme .instructions-section,
+.dark-theme .rating-section,
+.dark-theme .comments-section,
+.dark-theme .star-rating,
+.dark-theme .comment-header,
+.dark-theme .comment-content,
+.dark-theme .comment-date {
+    color: var(--text) !important;
+}
+
+.dark-theme .instructions-section,
+.dark-theme .instructions-section ol,
+.dark-theme .instructions-section ul,
+.dark-theme .instructions-section li {
+    color: var(--text) !important;
+} 
